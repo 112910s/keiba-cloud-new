@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T03:56:09+09:00",
+  "generated_at": "2026-10-18T04:17:52+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 90,
@@ -13,7 +13,7 @@
     "settled_picked_races": 24,
     "profit_confirmed": -81100,
     "roi_confirmed_percent": 66.21,
-    "odds_observations": 442149,
+    "odds_observations": 442210,
     "historical_model_picks": 0,
     "historical_finish_rows": 334,
     "baseline_picks": 240,
@@ -35,6 +35,20 @@
   },
   "fetches": [
     {
+      "at": "2026-10-18T04:17:52+09:00",
+      "kind": "odds",
+      "status": "OK",
+      "rows": 1428,
+      "message": "{\"odds\": 1428}"
+    },
+    {
+      "at": "2026-10-18T04:17:52+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 616,
+      "message": "{\"racelist\": 56, \"payback\": 0, \"horselist\": 560}"
+    },
+    {
       "at": "2026-10-18T03:56:09+09:00",
       "kind": "odds",
       "status": "OK",
@@ -103,20 +117,6 @@
       "status": "OK",
       "rows": 616,
       "message": "{\"racelist\": 56, \"payback\": 0, \"horselist\": 560}"
-    },
-    {
-      "at": "2026-10-18T01:39:18+09:00",
-      "kind": "odds",
-      "status": "ERROR",
-      "rows": 0,
-      "message": "HTTP Error 404: Not Found"
-    },
-    {
-      "at": "2026-10-18T01:39:18+09:00",
-      "kind": "race",
-      "status": "ERROR",
-      "rows": 0,
-      "message": "HTTP Error 404: Not Found"
     }
   ],
   "races": [
