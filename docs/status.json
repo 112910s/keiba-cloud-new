@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T14:38:04+09:00",
+  "generated_at": "2026-10-17T14:38:52+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 34,
@@ -13,7 +13,7 @@
     "settled_picked_races": 0,
     "profit_confirmed": 0,
     "roi_confirmed_percent": null,
-    "odds_observations": 30559,
+    "odds_observations": 46440,
     "historical_model_picks": 0,
     "baseline_picks": 0,
     "unpicked_races": 34,
@@ -33,6 +33,20 @@
     "jra_observed_races": 1
   },
   "fetches": [
+    {
+      "at": "2026-10-17T14:38:52+09:00",
+      "kind": "odds",
+      "status": "OK",
+      "rows": 38642,
+      "message": "{\"odds\": 38642}"
+    },
+    {
+      "at": "2026-10-17T14:38:52+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 375,
+      "message": "{\"racelist\": 34, \"payback\": 0, \"horselist\": 341}"
+    },
     {
       "at": "2026-10-17T14:38:04+09:00",
       "kind": "odds",
