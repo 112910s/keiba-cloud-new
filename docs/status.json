@@ -1,39 +1,53 @@
 {
-  "generated_at": "2026-10-17T19:51:54+09:00",
+  "generated_at": "2026-10-17T20:16:19+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 34,
-    "payout_races": 27,
-    "picked_races": 22,
-    "stake": 220000,
+    "payout_races": 29,
+    "picked_races": 24,
+    "stake": 240000,
     "returns_confirmed": 158900,
-    "settled_stake": 200000,
+    "settled_stake": 210000,
     "hits": 2,
-    "unsettled_picked_races": 2,
-    "settled_picked_races": 20,
-    "profit_confirmed": -41100,
-    "roi_confirmed_percent": 79.45,
-    "odds_observations": 316330,
+    "unsettled_picked_races": 3,
+    "settled_picked_races": 21,
+    "profit_confirmed": -51100,
+    "roi_confirmed_percent": 75.67,
+    "odds_observations": 341309,
     "historical_model_picks": 0,
     "historical_finish_rows": 0,
-    "baseline_picks": 220,
-    "unpicked_races": 12,
+    "baseline_picks": 240,
+    "unpicked_races": 10,
     "empty_odds_fetches": 0,
     "fetch_errors": 0,
     "by_category": {
       "地方": {
         "races": 22,
-        "picked_races": 15
+        "picked_races": 16
       },
       "ばんえい": {
         "races": 12,
-        "picked_races": 7
+        "picked_races": 8
       }
     },
-    "jra_odds_observations": 44880,
+    "jra_odds_observations": 48960,
     "jra_observed_races": 1
   },
   "fetches": [
+    {
+      "at": "2026-10-17T20:16:19+09:00",
+      "kind": "odds",
+      "status": "OK",
+      "rows": 38041,
+      "message": "{\"odds\": 38041}"
+    },
+    {
+      "at": "2026-10-17T20:16:19+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 404,
+      "message": "{\"racelist\": 34, \"payback\": 29, \"horselist\": 341}"
+    },
     {
       "at": "2026-10-17T19:51:54+09:00",
       "kind": "odds",
@@ -103,20 +117,6 @@
       "status": "OK",
       "rows": 392,
       "message": "{\"racelist\": 34, \"payback\": 17, \"horselist\": 341}"
-    },
-    {
-      "at": "2026-10-17T17:54:18+09:00",
-      "kind": "odds",
-      "status": "OK",
-      "rows": 38405,
-      "message": "{\"odds\": 38405}"
-    },
-    {
-      "at": "2026-10-17T17:54:18+09:00",
-      "kind": "race",
-      "status": "OK",
-      "rows": 391,
-      "message": "{\"racelist\": 34, \"payback\": 16, \"horselist\": 341}"
     }
   ],
   "races": [
@@ -1097,12 +1097,113 @@
       "surface": "ダート",
       "category": "地方",
       "payout_confirmed": false,
-      "picks": 0,
-      "stake": 0,
+      "picks": 10,
+      "stake": 10000,
       "hit": null,
       "return_yen": null,
-      "status": "事前記録なし",
-      "ticket_details": []
+      "status": "払戻待ち",
+      "ticket_details": [
+        {
+          "ticket": "4-12-5",
+          "odds": 153.7,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "4-14-7",
+          "odds": 140.4,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "4-3-5",
+          "odds": 147.1,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "4-3-7",
+          "odds": 152.8,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "5-3-7",
+          "odds": 160.9,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "5-4-13",
+          "odds": 162.8,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "5-7-8",
+          "odds": 137.6,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "7-3-4",
+          "odds": 136.2,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "7-4-12",
+          "odds": 152.8,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "7-5-12",
+          "odds": 136.9,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        }
+      ]
     },
     {
       "venue": "帯広ば",
@@ -1878,12 +1979,12 @@
       "name": "十勝フードトラック協会記念Ａ２",
       "surface": "ダート",
       "category": "ばんえい",
-      "payout_confirmed": false,
+      "payout_confirmed": true,
       "picks": 10,
       "stake": 10000,
-      "hit": null,
-      "return_yen": null,
-      "status": "払戻待ち",
+      "hit": 0,
+      "return_yen": 0,
+      "status": "照合済",
       "ticket_details": [
         {
           "ticket": "4-6-3",
@@ -1892,8 +1993,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         },
         {
           "ticket": "5-4-3",
@@ -1902,8 +2003,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         },
         {
           "ticket": "5-6-3",
@@ -1912,8 +2013,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         },
         {
           "ticket": "5-7-6",
@@ -1922,8 +2023,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         },
         {
           "ticket": "5-7-8",
@@ -1932,8 +2033,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         },
         {
           "ticket": "5-8-7",
@@ -1942,8 +2043,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         },
         {
           "ticket": "6-4-3",
@@ -1952,8 +2053,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         },
         {
           "ticket": "6-5-3",
@@ -1962,8 +2063,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         },
         {
           "ticket": "8-5-7",
@@ -1972,8 +2073,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         },
         {
           "ticket": "8-7-5",
@@ -1982,8 +2083,8 @@
           "captured": "2026-10-17T19:51:54+09:00",
           "method": "odds_only_baseline_v1",
           "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
-          "hit": null,
-          "return_yen": null
+          "hit": false,
+          "return_yen": 0
         }
       ]
     },
@@ -1996,12 +2097,113 @@
       "surface": "ダート",
       "category": "ばんえい",
       "payout_confirmed": false,
-      "picks": 0,
-      "stake": 0,
+      "picks": 10,
+      "stake": 10000,
       "hit": null,
       "return_yen": null,
-      "status": "事前記録なし",
-      "ticket_details": []
+      "status": "払戻待ち",
+      "ticket_details": [
+        {
+          "ticket": "1-2-7",
+          "odds": 140.3,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "1-7-2",
+          "odds": 142.0,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "1-8-5",
+          "odds": 140.9,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "2-1-5",
+          "odds": 158.7,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "4-1-5",
+          "odds": 146.6,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "4-5-7",
+          "odds": 145.4,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "5-2-8",
+          "odds": 140.3,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "5-3-1",
+          "odds": 149.0,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "5-6-2",
+          "odds": 150.2,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        },
+        {
+          "ticket": "5-8-6",
+          "odds": 149.0,
+          "stake": 1000,
+          "captured": "2026-10-17T20:16:19+09:00",
+          "method": "odds_only_baseline_v1",
+          "reason": "取得時オッズ100〜5000倍の候補から150倍に近い順で選択。馬の強さは評価していません。",
+          "hit": null,
+          "return_yen": null
+        }
+      ]
     },
     {
       "venue": "高知",
@@ -2846,11 +3048,11 @@
       "name": "Ｃ２－２",
       "surface": "ダート",
       "category": "地方",
-      "payout_confirmed": false,
+      "payout_confirmed": true,
       "picks": 0,
       "stake": 0,
-      "hit": null,
-      "return_yen": null,
+      "hit": 0,
+      "return_yen": 0,
       "status": "事前記録なし",
       "ticket_details": []
     },
@@ -2897,8 +3099,15 @@
   ],
   "jra": {
     "observed_races": 1,
-    "odds_observations": 44880,
+    "odds_observations": 48960,
     "recent_fetches": [
+      {
+        "at": "2026-10-17T20:07:10+09:00",
+        "race_id": "202608040711",
+        "status": "OK",
+        "rows": 4080,
+        "message": "sha256=1e8c046a8c52f8c7"
+      },
       {
         "at": "2026-10-17T19:45:18+09:00",
         "race_id": "202608040711",
@@ -2961,13 +3170,6 @@
         "status": "OK",
         "rows": 4080,
         "message": "sha256=00e5899de4786687"
-      },
-      {
-        "at": "2026-10-17T14:28:08+09:00",
-        "race_id": "202608040711",
-        "status": "OK",
-        "rows": 4080,
-        "message": "sha256=4815b835ff650e0b"
       }
     ],
     "picks_supported": false,
