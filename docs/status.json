@@ -1,38 +1,52 @@
 {
-  "generated_at": "2026-10-17T15:48:00+09:00",
+  "generated_at": "2026-10-17T16:26:46+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 34,
-    "payout_races": 4,
-    "picked_races": 5,
-    "stake": 50000,
-    "returns_confirmed": 0,
-    "settled_stake": 20000,
-    "hits": 0,
-    "unsettled_picked_races": 3,
-    "settled_picked_races": 2,
-    "profit_confirmed": -20000,
-    "roi_confirmed_percent": 0.0,
-    "odds_observations": 97272,
+    "payout_races": 7,
+    "picked_races": 7,
+    "stake": 70000,
+    "returns_confirmed": 103200,
+    "settled_stake": 50000,
+    "hits": 1,
+    "unsettled_picked_races": 2,
+    "settled_picked_races": 5,
+    "profit_confirmed": 53200,
+    "roi_confirmed_percent": 206.4,
+    "odds_observations": 116060,
     "historical_model_picks": 0,
-    "baseline_picks": 50,
-    "unpicked_races": 29,
+    "baseline_picks": 70,
+    "unpicked_races": 27,
     "empty_odds_fetches": 0,
     "fetch_errors": 0,
     "by_category": {
       "地方": {
         "races": 22,
-        "picked_races": 4
+        "picked_races": 5
       },
       "ばんえい": {
         "races": 12,
-        "picked_races": 1
+        "picked_races": 2
       }
     },
-    "jra_odds_observations": 12240,
+    "jra_odds_observations": 16320,
     "jra_observed_races": 1
   },
   "fetches": [
+    {
+      "at": "2026-10-17T16:26:46+09:00",
+      "kind": "odds",
+      "status": "OK",
+      "rows": 38642,
+      "message": "{\"odds\": 38642}"
+    },
+    {
+      "at": "2026-10-17T16:26:46+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 382,
+      "message": "{\"racelist\": 34, \"payback\": 7, \"horselist\": 341}"
+    },
     {
       "at": "2026-10-17T15:48:00+09:00",
       "kind": "odds",
@@ -102,20 +116,6 @@
       "status": "OK",
       "rows": 375,
       "message": "{\"racelist\": 34, \"payback\": 0, \"horselist\": 341}"
-    },
-    {
-      "at": "2026-10-17T14:06:11+09:00",
-      "kind": "odds",
-      "status": "OK",
-      "rows": 38642,
-      "message": "{\"odds\": 38642}"
-    },
-    {
-      "at": "2026-10-17T14:06:11+09:00",
-      "kind": "race",
-      "status": "OK",
-      "rows": 375,
-      "message": "{\"racelist\": 34, \"payback\": 0, \"horselist\": 341}"
     }
   ],
   "races": [
@@ -142,12 +142,12 @@
       "name": "２歳－５組",
       "surface": "ダート",
       "category": "地方",
-      "payout_confirmed": false,
+      "payout_confirmed": true,
       "picks": 10,
       "stake": 10000,
-      "hit": null,
-      "return_yen": null,
-      "status": "払戻待ち"
+      "hit": 1,
+      "return_yen": 103200,
+      "status": "照合済"
     },
     {
       "venue": "佐賀",
@@ -322,12 +322,12 @@
       "name": "ぷーすけ５０代ラストラン！２歳Ｃ－１",
       "surface": "ダート",
       "category": "ばんえい",
-      "payout_confirmed": false,
+      "payout_confirmed": true,
       "picks": 10,
       "stake": 10000,
-      "hit": null,
-      "return_yen": null,
-      "status": "払戻待ち"
+      "hit": 0,
+      "return_yen": 0,
+      "status": "照合済"
     },
     {
       "venue": "帯広ば",
@@ -353,11 +353,11 @@
       "surface": "ダート",
       "category": "ばんえい",
       "payout_confirmed": false,
-      "picks": 0,
-      "stake": 0,
+      "picks": 10,
+      "stake": 10000,
       "hit": null,
       "return_yen": null,
-      "status": "事前記録なし"
+      "status": "払戻待ち"
     },
     {
       "venue": "帯広ば",
@@ -487,12 +487,12 @@
       "name": "Ｃ３－４",
       "surface": "ダート",
       "category": "地方",
-      "payout_confirmed": false,
+      "payout_confirmed": true,
       "picks": 10,
       "stake": 10000,
-      "hit": null,
-      "return_yen": null,
-      "status": "払戻待ち"
+      "hit": 0,
+      "return_yen": 0,
+      "status": "照合済"
     },
     {
       "venue": "高知",
@@ -503,11 +503,11 @@
       "surface": "ダート",
       "category": "地方",
       "payout_confirmed": false,
-      "picks": 0,
-      "stake": 0,
+      "picks": 10,
+      "stake": 10000,
       "hit": null,
       "return_yen": null,
-      "status": "事前記録なし"
+      "status": "払戻待ち"
     },
     {
       "venue": "高知",
@@ -640,8 +640,15 @@
   ],
   "jra": {
     "observed_races": 1,
-    "odds_observations": 12240,
+    "odds_observations": 16320,
     "recent_fetches": [
+      {
+        "at": "2026-10-17T16:11:40+09:00",
+        "race_id": "202608040711",
+        "status": "OK",
+        "rows": 4080,
+        "message": "sha256=6fa206227291bb59"
+      },
       {
         "at": "2026-10-17T15:33:42+09:00",
         "race_id": "202608040711",
