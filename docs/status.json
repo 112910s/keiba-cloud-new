@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T21:17:40+09:00",
+  "generated_at": "2026-10-17T22:00:35+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 34,
@@ -13,7 +13,7 @@
     "settled_picked_races": 24,
     "profit_confirmed": -81100,
     "roi_confirmed_percent": 66.21,
-    "odds_observations": 391485,
+    "odds_observations": 416573,
     "historical_model_picks": 0,
     "historical_finish_rows": 0,
     "baseline_picks": 240,
@@ -30,10 +30,24 @@
         "picked_races": 8
       }
     },
-    "jra_odds_observations": 57120,
+    "jra_odds_observations": 61200,
     "jra_observed_races": 1
   },
   "fetches": [
+    {
+      "at": "2026-10-17T22:00:35+09:00",
+      "kind": "odds",
+      "status": "OK",
+      "rows": 38041,
+      "message": "{\"odds\": 38041}"
+    },
+    {
+      "at": "2026-10-17T22:00:35+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 409,
+      "message": "{\"racelist\": 34, \"payback\": 34, \"horselist\": 341}"
+    },
     {
       "at": "2026-10-17T21:17:40+09:00",
       "kind": "odds",
@@ -103,20 +117,6 @@
       "status": "OK",
       "rows": 399,
       "message": "{\"racelist\": 34, \"payback\": 24, \"horselist\": 341}"
-    },
-    {
-      "at": "2026-10-17T18:52:51+09:00",
-      "kind": "odds",
-      "status": "OK",
-      "rows": 38405,
-      "message": "{\"odds\": 38405}"
-    },
-    {
-      "at": "2026-10-17T18:52:51+09:00",
-      "kind": "race",
-      "status": "OK",
-      "rows": 396,
-      "message": "{\"racelist\": 34, \"payback\": 21, \"horselist\": 341}"
     }
   ],
   "races": [
@@ -3099,8 +3099,15 @@
   ],
   "jra": {
     "observed_races": 1,
-    "odds_observations": 57120,
+    "odds_observations": 61200,
     "recent_fetches": [
+      {
+        "at": "2026-10-17T21:36:49+09:00",
+        "race_id": "202608040711",
+        "status": "OK",
+        "rows": 4080,
+        "message": "sha256=0acc79b79fe64933"
+      },
       {
         "at": "2026-10-17T21:05:52+09:00",
         "race_id": "202608040711",
@@ -3163,13 +3170,6 @@
         "status": "OK",
         "rows": 4080,
         "message": "sha256=d96cd3af9f849420"
-      },
-      {
-        "at": "2026-10-17T16:46:46+09:00",
-        "race_id": "202608040711",
-        "status": "OK",
-        "rows": 4080,
-        "message": "sha256=2830aa14522a6005"
       }
     ],
     "picks_supported": false,
