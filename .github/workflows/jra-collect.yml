@@ -1,0 +1,46 @@
+name: JRA odds collection (experimental)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: keiba-collector
+  cancel-in-progress: false
+jobs:
+  jra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect configured JRA race odds
+        env:
+          JRA_RACE_IDS: ${{ vars.JRA_RACE_IDS }}
+        run: python jra_collector.py
+      - name: JRA status summary
+        if: always()
+        run: |
+          python - <<'PY'
+          import sqlite3, pathlib, os
+          db=pathlib.Path('state/keiba.sqlite3')
+          if db.exists():
+              with sqlite3.connect(db) as c:
+                  found=c.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='jra_odds_observations'").fetchone()[0]
+                  n=c.execute('SELECT COUNT(*) FROM jra_odds_observations').fetchone()[0] if found else 0
+          else: n=0
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write(f'## JRA 三連単オッズ収集\n\n保存済み観測件数: **{n:,}**\n\n※予想・払戻照合は未実装。対象レースはリポジトリ変数 JRA_RACE_IDS で指定。\n')
+          PY
+      - name: Save JRA observations
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add state/keiba.sqlite3
+          git diff --cached --quiet || (git commit -m 'Update JRA odds observations' && git push)
