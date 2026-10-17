@@ -1,0 +1,67 @@
+name: Collect NAR data
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: keiba-collector
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect and render
+        run: python app.py sync
+      - name: Show private dashboard in run summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          p = Path('docs/status.json')
+          lines = ['# KEIBA CLOUD 収集状況', '']
+          if not p.is_file():
+              lines += ['**収集状況ファイルがありません。実行ログを確認してください。**']
+          else:
+              try:
+                  d = json.loads(p.read_text(encoding='utf-8'))
+                  t = d.get('totals') or {}
+                  lines += [f"最終更新：{d.get('generated_at', '不明')}",
+                            f"対象：{d.get('scope', '不明')}", '',
+                            '| 項目 | 件数・金額 |', '|---|---:|']
+                  for key, label in [('races','レース'),('odds_observations','オッズ観測'),
+                                     ('picked_races','仮想購入レース'),('payout_races','払戻確認レース'),
+                                     ('stake','仮想投資額（円）'),('returns_confirmed','確定払戻額（円）'),
+                                     ('settled_stake','結果確定済み投資額（円）'),('hits','的中数')]:
+                      val = t.get(key, '未集計')
+                      lines.append(f'| {label} | {val:,} |' if isinstance(val,(int,float)) else f'| {label} | {val} |')
+                  settled = t.get('settled_stake', 0)
+                  returned = t.get('returns_confirmed', 0)
+                  lines += ['', f'**確定分回収率：{returned/settled*100:.1f}%**' if isinstance(settled,(int,float)) and settled>0 and isinstance(returned,(int,float)) else '**確定分回収率：未確定**', '']
+                  lines += ['## 直近の取得状況', '', '| 種類 | 状態 | 読込行数 |', '|---|---|---:|']
+                  for x in (d.get('fetches') or [])[:6]:
+                      lines.append(f"| {str(x.get('kind','?'))} | {str(x.get('status','?'))} | {x.get('rows', '?')} |")
+                  lines += ['', '※ GitHub Actionsの実行成功と、全レース取得・予想成功は別です。JRAは未対応です。']
+              except Exception as exc:
+                  lines += [f'**状況ファイルの読込に失敗：{type(exc).__name__}**']
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as f:
+              f.write('\n'.join(lines) + '\n')
+          PY
+      - name: Save persistent state and dashboard
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add state/keiba.sqlite3 docs/index.html docs/status.json
+          git diff --cached --quiet || (git commit -m 'Update NAR collection state' && git push)
