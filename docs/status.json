@@ -1,38 +1,52 @@
 {
-  "generated_at": "2026-10-17T16:55:53+09:00",
+  "generated_at": "2026-10-17T17:19:11+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 34,
-    "payout_races": 10,
-    "picked_races": 8,
-    "stake": 80000,
+    "payout_races": 12,
+    "picked_races": 10,
+    "stake": 100000,
     "returns_confirmed": 103200,
-    "settled_stake": 60000,
+    "settled_stake": 70000,
     "hits": 1,
-    "unsettled_picked_races": 2,
-    "settled_picked_races": 6,
-    "profit_confirmed": 43200,
-    "roi_confirmed_percent": 172.0,
-    "odds_observations": 135698,
+    "unsettled_picked_races": 3,
+    "settled_picked_races": 7,
+    "profit_confirmed": 33200,
+    "roi_confirmed_percent": 147.43,
+    "odds_observations": 156375,
     "historical_model_picks": 0,
-    "baseline_picks": 80,
-    "unpicked_races": 26,
+    "baseline_picks": 100,
+    "unpicked_races": 24,
     "empty_odds_fetches": 0,
     "fetch_errors": 0,
     "by_category": {
       "地方": {
         "races": 22,
-        "picked_races": 6
+        "picked_races": 7
       },
       "ばんえい": {
         "races": 12,
-        "picked_races": 2
+        "picked_races": 3
       }
     },
-    "jra_odds_observations": 20400,
+    "jra_odds_observations": 24480,
     "jra_observed_races": 1
   },
   "fetches": [
+    {
+      "at": "2026-10-17T17:19:11+09:00",
+      "kind": "odds",
+      "status": "OK",
+      "rows": 38642,
+      "message": "{\"odds\": 38642}"
+    },
+    {
+      "at": "2026-10-17T17:19:11+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 387,
+      "message": "{\"racelist\": 34, \"payback\": 12, \"horselist\": 341}"
+    },
     {
       "at": "2026-10-17T16:55:53+09:00",
       "kind": "odds",
@@ -102,20 +116,6 @@
       "status": "OK",
       "rows": 376,
       "message": "{\"racelist\": 34, \"payback\": 1, \"horselist\": 341}"
-    },
-    {
-      "at": "2026-10-17T14:38:52+09:00",
-      "kind": "odds",
-      "status": "OK",
-      "rows": 38642,
-      "message": "{\"odds\": 38642}"
-    },
-    {
-      "at": "2026-10-17T14:38:52+09:00",
-      "kind": "race",
-      "status": "OK",
-      "rows": 375,
-      "message": "{\"racelist\": 34, \"payback\": 0, \"horselist\": 341}"
     }
   ],
   "races": [
@@ -172,11 +172,11 @@
       "name": "国見岳（くにみだけ）賞Ａ１・Ａ２",
       "surface": "ダート",
       "category": "地方",
-      "payout_confirmed": false,
+      "payout_confirmed": true,
       "picks": 0,
       "stake": 0,
-      "hit": null,
-      "return_yen": null,
+      "hit": 0,
+      "return_yen": 0,
       "status": "事前記録なし"
     },
     {
@@ -188,11 +188,11 @@
       "surface": "ダート",
       "category": "地方",
       "payout_confirmed": false,
-      "picks": 0,
-      "stake": 0,
+      "picks": 10,
+      "stake": 10000,
       "hit": null,
       "return_yen": null,
-      "status": "事前記録なし"
+      "status": "払戻待ち"
     },
     {
       "venue": "佐賀",
@@ -352,12 +352,12 @@
       "name": "ユキ＆ミサ初帯広来場記念２歳Ｂ－３",
       "surface": "ダート",
       "category": "ばんえい",
-      "payout_confirmed": false,
+      "payout_confirmed": true,
       "picks": 10,
       "stake": 10000,
-      "hit": null,
-      "return_yen": null,
-      "status": "払戻待ち"
+      "hit": 0,
+      "return_yen": 0,
+      "status": "照合済"
     },
     {
       "venue": "帯広ば",
@@ -368,11 +368,11 @@
       "surface": "ダート",
       "category": "ばんえい",
       "payout_confirmed": false,
-      "picks": 0,
-      "stake": 0,
+      "picks": 10,
+      "stake": 10000,
       "hit": null,
       "return_yen": null,
-      "status": "事前記録なし"
+      "status": "払戻待ち"
     },
     {
       "venue": "帯広ば",
@@ -640,8 +640,15 @@
   ],
   "jra": {
     "observed_races": 1,
-    "odds_observations": 20400,
+    "odds_observations": 24480,
     "recent_fetches": [
+      {
+        "at": "2026-10-17T17:07:30+09:00",
+        "race_id": "202608040711",
+        "status": "OK",
+        "rows": 4080,
+        "message": "sha256=d96cd3af9f849420"
+      },
       {
         "at": "2026-10-17T16:46:46+09:00",
         "race_id": "202608040711",
