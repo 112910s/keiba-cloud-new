@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-17T14:06:11+09:00",
-  "scope": "NARのみ。JRA未対応。",
+  "generated_at": "2026-10-17T14:38:04+09:00",
+  "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 34,
     "payout_races": 0,
@@ -13,7 +13,7 @@
     "settled_picked_races": 0,
     "profit_confirmed": 0,
     "roi_confirmed_percent": null,
-    "odds_observations": 14743,
+    "odds_observations": 30559,
     "historical_model_picks": 0,
     "baseline_picks": 0,
     "unpicked_races": 34,
@@ -28,9 +28,25 @@
         "races": 12,
         "picked_races": 0
       }
-    }
+    },
+    "jra_odds_observations": 8160,
+    "jra_observed_races": 1
   },
   "fetches": [
+    {
+      "at": "2026-10-17T14:38:04+09:00",
+      "kind": "odds",
+      "status": "OK",
+      "rows": 38642,
+      "message": "{\"odds\": 38642}"
+    },
+    {
+      "at": "2026-10-17T14:38:04+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 375,
+      "message": "{\"racelist\": 34, \"payback\": 0, \"horselist\": 341}"
+    },
     {
       "at": "2026-10-17T14:06:11+09:00",
       "kind": "odds",
@@ -559,11 +575,34 @@
     }
   ],
   "limitations": [
-    "JRA中央競馬は未実装",
     "地方の取得元CSVが空の場合はオッズ未取得",
     "過去3走以上の馬の実績が揃った場合のみ履歴スコア方式。それ以外はオッズのみのベースライン。いずれも未検証のヒューリスティックで勝率向上は未証明",
     "ばんえいは別分類。ただし収集できた場合のみ",
     "確定払戻が未取得なら損益・回収率を確定しない",
-    "GitHub Actionsの実行時刻は保証されず発走前取得漏れがあり得る"
-  ]
+    "GitHub Actionsの実行時刻は保証されず発走前取得漏れがあり得る",
+    "JRAはレースID指定の三連単オッズ観測のみ。全レース検出・予想・払戻照合は未実装"
+  ],
+  "jra": {
+    "observed_races": 1,
+    "odds_observations": 8160,
+    "recent_fetches": [
+      {
+        "at": "2026-10-17T14:28:08+09:00",
+        "race_id": "202608040711",
+        "status": "OK",
+        "rows": 4080,
+        "message": "sha256=4815b835ff650e0b"
+      },
+      {
+        "at": "2026-10-17T14:15:32+09:00",
+        "race_id": "202608040711",
+        "status": "OK",
+        "rows": 4080,
+        "message": "sha256=f72a563348f7393a"
+      }
+    ],
+    "picks_supported": false,
+    "payouts_supported": false,
+    "auto_discovery_supported": false
+  }
 }
