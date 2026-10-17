@@ -225,8 +225,30 @@ def history_report(c, as_of):
     return sorted(ranked,key=lambda r:(-r['smoothed_win_rate'],-r['starts'],r['horse']))
 
 
+def promote_settled_history(c, as_of):
+    """Grow a past-results training set only from races with confirmed payouts.
+
+    Never import same-day results as training evidence: future predictions use
+    strictly earlier dates, and the original picks remain immutable.
+    """
+    cutoff=as_of.strftime('%Y%m%d')
+    with c:
+        c.execute("""INSERT OR IGNORE INTO history (venue,day,race,horse,name,jockey,finish)
+            SELECT e.venue,e.day,e.race,e.horse,e.name,e.jockey,CAST(e.finish AS INTEGER)
+            FROM entries e
+            WHERE e.day < ? AND e.name <> ''
+              AND TRIM(e.finish) <> '' AND TRIM(e.finish) NOT GLOB '*[^0-9]*'
+              AND CAST(e.finish AS INTEGER) BETWEEN 1 AND 30
+              AND EXISTS (SELECT 1 FROM payouts p
+                  WHERE p.venue=e.venue AND p.day=e.day AND p.race=e.race)
+        """,(cutoff,))
+    return c.execute('SELECT changes()').fetchone()[0]
+
+
 def sync(c, fixture=None, observed=None):
     observed=observed or now()
+    promoted=promote_settled_history(c,observed)
+    print(f'confirmed historical entries added: {promoted}',flush=True)
     results=[]
     for kind in ('race','odds'):
         try:
@@ -281,6 +303,7 @@ def render(c,observed=None):
     totals['roi_confirmed_percent']=round(100*totals['returns_confirmed']/totals['settled_stake'],2) if totals['settled_stake'] else None
     totals['odds_observations']=observations
     totals['historical_model_picks']=c.execute("SELECT COUNT(*) FROM picks WHERE method='historical_heuristic_v1'").fetchone()[0]
+    totals['historical_finish_rows']=c.execute('SELECT COUNT(*) FROM history').fetchone()[0]
     totals['baseline_picks']=c.execute("SELECT COUNT(*) FROM picks WHERE method='odds_only_baseline_v1'").fetchone()[0]
     totals['unpicked_races']=sum(not r['picks'] for r in rows)
     totals['empty_odds_fetches']=c.execute("SELECT COUNT(*) FROM fetches WHERE status='EMPTY_ODDS'").fetchone()[0]
@@ -293,7 +316,7 @@ def render(c,observed=None):
     jra_recent=[dict(at=a,race_id=r,status=st,rows=n,message=m) for a,r,st,n,m in c.execute('SELECT at,race_id,status,rows,message FROM jra_fetches ORDER BY rowid DESC LIMIT 10')] if 'jra_fetches' in jra_tables else []
     totals['jra_odds_observations']=jra_count
     totals['jra_observed_races']=jra_races
-    status=dict(generated_at=stamp(observed),scope='NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ',totals=dict(totals),fetches=[dict(at=a,kind=k,status=s,rows=n,message=m) for a,k,s,n,m in fetches],races=rows,limitations=['JRA中央競馬は未実装','地方の取得元CSVが空の場合はオッズ未取得','過去3走以上の馬の実績が揃った場合のみ履歴スコア方式。それ以外はオッズのみのベースライン。いずれも未検証のヒューリスティックで勝率向上は未証明','ばんえいは別分類。ただし収集できた場合のみ','確定払戻が未取得なら損益・回収率を確定しない','GitHub Actionsの実行時刻は保証されず発走前取得漏れがあり得る'])
+    status=dict(generated_at=stamp(observed),scope='NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ',totals=dict(totals),fetches=[dict(at=a,kind=k,status=s,rows=n,message=m) for a,k,s,n,m in fetches],races=rows,limitations=['JRA中央競馬は未実装','地方の取得元CSVが空の場合はオッズ未取得','確定した過去レースの着順を翌日以降の履歴に自動追加。過去3走以上の馬の実績が揃った場合のみ履歴スコア方式。それ以外はオッズのみのベースライン。いずれも未検証のヒューリスティックで勝率向上は未証明','ばんえいは別分類。ただし収集できた場合のみ','確定払戻が未取得なら損益・回収率を確定しない','GitHub Actionsの実行時刻は保証されず発走前取得漏れがあり得る'])
     status['jra']={'observed_races':jra_races,'odds_observations':jra_count,'recent_fetches':jra_recent,'picks_supported':False,'payouts_supported':False,'auto_discovery_supported':False}
     status['limitations']=[x for x in status['limitations'] if x!='JRA中央競馬は未実装']
     status['limitations'].append('JRAはレースID指定の三連単オッズ観測のみ。全レース検出・予想・払戻照合は未実装')
