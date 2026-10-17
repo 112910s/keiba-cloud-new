@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T00:02:40+09:00",
+  "generated_at": "2026-10-18T00:37:28+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 90,
@@ -13,7 +13,7 @@
     "settled_picked_races": 24,
     "profit_confirmed": -81100,
     "roi_confirmed_percent": 66.21,
-    "odds_observations": 441722,
+    "odds_observations": 441783,
     "historical_model_picks": 0,
     "historical_finish_rows": 334,
     "baseline_picks": 240,
@@ -34,6 +34,20 @@
     "jra_observed_races": 1
   },
   "fetches": [
+    {
+      "at": "2026-10-18T00:37:28+09:00",
+      "kind": "odds",
+      "status": "OK",
+      "rows": 1428,
+      "message": "{\"odds\": 1428}"
+    },
+    {
+      "at": "2026-10-18T00:37:28+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 616,
+      "message": "{\"racelist\": 56, \"payback\": 0, \"horselist\": 560}"
+    },
     {
       "at": "2026-10-18T00:02:40+09:00",
       "kind": "odds",
@@ -103,20 +117,6 @@
       "status": "OK",
       "rows": 408,
       "message": "{\"racelist\": 34, \"payback\": 33, \"horselist\": 341}"
-    },
-    {
-      "at": "2026-10-17T20:16:19+09:00",
-      "kind": "odds",
-      "status": "OK",
-      "rows": 38041,
-      "message": "{\"odds\": 38041}"
-    },
-    {
-      "at": "2026-10-17T20:16:19+09:00",
-      "kind": "race",
-      "status": "OK",
-      "rows": 404,
-      "message": "{\"racelist\": 34, \"payback\": 29, \"horselist\": 341}"
     }
   ],
   "races": [
