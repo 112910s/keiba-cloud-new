@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T07:55:33+09:00",
+  "generated_at": "2026-10-20T08:21:28+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 197,
@@ -18,7 +18,7 @@
     "historical_finish_rows": 334,
     "baseline_picks": 240,
     "unpicked_races": 173,
-    "empty_odds_fetches": 34,
+    "empty_odds_fetches": 35,
     "fetch_errors": 2,
     "by_category": {
       "地方": {
@@ -35,6 +35,20 @@
   },
   "fetches": [
     {
+      "at": "2026-10-20T08:21:28+09:00",
+      "kind": "odds",
+      "status": "EMPTY_ODDS",
+      "rows": 0,
+      "message": "{\"odds\": 0}"
+    },
+    {
+      "at": "2026-10-20T08:21:28+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 556,
+      "message": "{\"racelist\": 48, \"payback\": 0, \"horselist\": 508}"
+    },
+    {
       "at": "2026-10-20T07:55:33+09:00",
       "kind": "odds",
       "status": "EMPTY_ODDS",
@@ -99,20 +113,6 @@
     },
     {
       "at": "2026-10-20T05:48:54+09:00",
-      "kind": "race",
-      "status": "OK",
-      "rows": 556,
-      "message": "{\"racelist\": 48, \"payback\": 0, \"horselist\": 508}"
-    },
-    {
-      "at": "2026-10-20T05:14:05+09:00",
-      "kind": "odds",
-      "status": "EMPTY_ODDS",
-      "rows": 0,
-      "message": "{\"odds\": 0}"
-    },
-    {
-      "at": "2026-10-20T05:14:05+09:00",
       "kind": "race",
       "status": "OK",
       "rows": 556,
