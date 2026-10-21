@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T00:45:25+09:00",
+  "generated_at": "2026-10-22T01:24:08+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 245,
@@ -19,7 +19,7 @@
     "baseline_picks": 240,
     "unpicked_races": 221,
     "empty_odds_fetches": 36,
-    "fetch_errors": 12,
+    "fetch_errors": 14,
     "by_category": {
       "地方": {
         "races": 209,
@@ -34,6 +34,20 @@
     "jra_observed_races": 1
   },
   "fetches": [
+    {
+      "at": "2026-10-22T01:24:08+09:00",
+      "kind": "odds",
+      "status": "ERROR",
+      "rows": 0,
+      "message": "File is not a zip file"
+    },
+    {
+      "at": "2026-10-22T01:24:08+09:00",
+      "kind": "race",
+      "status": "ERROR",
+      "rows": 0,
+      "message": "File is not a zip file"
+    },
     {
       "at": "2026-10-22T00:45:25+09:00",
       "kind": "odds",
@@ -103,20 +117,6 @@
       "status": "OK",
       "rows": 559,
       "message": "{\"racelist\": 48, \"payback\": 0, \"horselist\": 511}"
-    },
-    {
-      "at": "2026-10-20T10:12:09+09:00",
-      "kind": "odds",
-      "status": "ERROR",
-      "rows": 0,
-      "message": "HTTP Error 404: Not Found"
-    },
-    {
-      "at": "2026-10-20T10:12:09+09:00",
-      "kind": "race",
-      "status": "ERROR",
-      "rows": 0,
-      "message": "HTTP Error 404: Not Found"
     }
   ],
   "races": [
@@ -6478,6 +6478,13 @@
     "odds_observations": 77520,
     "recent_fetches": [
       {
+        "at": "2026-10-22T01:11:24+09:00",
+        "race_id": "202608040711",
+        "status": "ERROR",
+        "rows": 0,
+        "message": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
+      },
+      {
         "at": "2026-10-22T00:35:20+09:00",
         "race_id": "202608040711",
         "status": "ERROR",
@@ -6539,13 +6546,6 @@
         "status": "OK",
         "rows": 4080,
         "message": "sha256=0acc79b79fe64933"
-      },
-      {
-        "at": "2026-10-17T21:05:52+09:00",
-        "race_id": "202608040711",
-        "status": "OK",
-        "rows": 4080,
-        "message": "sha256=710931e03211df90"
       }
     ],
     "picks_supported": false,
