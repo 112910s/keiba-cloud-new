@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Small, auditable NAR paper-trading collector. Python standard library only."""
-import argparse, csv, hashlib, html, io, json, os, sqlite3, sys, urllib.parse, urllib.request, zipfile
+import argparse, csv, hashlib, html, io, json, os, sqlite3, sys, urllib.parse, urllib.request, urllib.error, zipfile
 from collections import Counter
 from collections import defaultdict
 from datetime import datetime, date, timedelta, timezone
@@ -48,10 +48,13 @@ def read_csv(data):
 
 def getzip(kind, timeout=60):
     endpoint='RaceDataDownload' if kind=='race' else 'OddsDataDownload'
-    url=HOST+'/KeibaWeb/DataDownload/'+endpoint+'?'+urllib.parse.urlencode({'type':'daily'})
+    url=os.environ.get('NAR_'+kind.upper()+'_ZIP_URL', '').strip() or (HOST+'/KeibaWeb/DataDownload/'+endpoint+'?'+urllib.parse.urlencode({'type':'daily'}))
     req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (compatible; KeibaResearch/1.0)','Accept':'application/zip,application/octet-stream,*/*','Referer':HOST+'/KeibaWeb/TodayRaceInfo/TodayRaceInfoTop'})
-    with urllib.request.urlopen(req,timeout=timeout) as r:
-        data=r.read(35*1024*1024+1)
+    try:
+        with urllib.request.urlopen(req,timeout=timeout) as r:
+            data=r.read(35*1024*1024+1)
+    except urllib.error.HTTPError as exc:
+        raise RuntimeError(f'NAR {kind} download HTTP {exc.code}; URL={url}; configure a verified ZIP source via NAR_{kind.upper()}_ZIP_URL') from exc
     if len(data)>35*1024*1024: raise ValueError('ZIP exceeds 35 MB safety limit')
     return data
 
