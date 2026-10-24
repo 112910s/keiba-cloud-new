@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T01:27:40+09:00",
+  "generated_at": "2026-10-24T17:41:53+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 245,
@@ -19,7 +19,7 @@
     "baseline_picks": 240,
     "unpicked_races": 221,
     "empty_odds_fetches": 36,
-    "fetch_errors": 32,
+    "fetch_errors": 34,
     "by_category": {
       "地方": {
         "races": 209,
@@ -34,6 +34,20 @@
     "jra_observed_races": 1
   },
   "fetches": [
+    {
+      "at": "2026-10-24T17:41:53+09:00",
+      "kind": "odds",
+      "status": "ERROR",
+      "rows": 0,
+      "message": "NAR odds download HTTP 404; URL=https://www.keiba.go.jp/KeibaWeb/DataDownload/OddsDataDownload?type=daily; configure a verified ZIP source via NAR_ODDS_ZIP_URL"
+    },
+    {
+      "at": "2026-10-24T17:41:53+09:00",
+      "kind": "race",
+      "status": "ERROR",
+      "rows": 0,
+      "message": "NAR race download HTTP 404; URL=https://www.keiba.go.jp/KeibaWeb/DataDownload/RaceDataDownload?type=daily; configure a verified ZIP source via NAR_RACE_ZIP_URL"
+    },
     {
       "at": "2026-10-24T01:27:40+09:00",
       "kind": "odds",
@@ -99,20 +113,6 @@
     },
     {
       "at": "2026-10-22T04:26:32+09:00",
-      "kind": "race",
-      "status": "ERROR",
-      "rows": 0,
-      "message": "File is not a zip file"
-    },
-    {
-      "at": "2026-10-22T03:50:38+09:00",
-      "kind": "odds",
-      "status": "ERROR",
-      "rows": 0,
-      "message": "File is not a zip file"
-    },
-    {
-      "at": "2026-10-22T03:50:38+09:00",
       "kind": "race",
       "status": "ERROR",
       "rows": 0,
