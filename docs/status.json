@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T07:50:08+09:00",
+  "generated_at": "2026-11-07T08:28:42+09:00",
   "scope": "NAR収集・仮想検証 / JRAは指定レースのオッズ観測のみ",
   "totals": {
     "races": 245,
@@ -35,6 +35,20 @@
   },
   "fetches": [
     {
+      "at": "2026-11-07T08:28:42+09:00",
+      "kind": "odds",
+      "status": "OK",
+      "rows": 13671,
+      "message": "{\"odds\": 13671}"
+    },
+    {
+      "at": "2026-11-07T08:28:42+09:00",
+      "kind": "race",
+      "status": "OK",
+      "rows": 387,
+      "message": "{\"racelist\": 35, \"payback\": 0, \"horselist\": 352}"
+    },
+    {
       "at": "2026-11-07T07:50:08+09:00",
       "kind": "odds",
       "status": "EMPTY_ODDS",
@@ -99,20 +113,6 @@
     },
     {
       "at": "2026-11-07T04:56:47+09:00",
-      "kind": "race",
-      "status": "OK",
-      "rows": 387,
-      "message": "{\"racelist\": 35, \"payback\": 0, \"horselist\": 352}"
-    },
-    {
-      "at": "2026-11-07T04:02:56+09:00",
-      "kind": "odds",
-      "status": "EMPTY_ODDS",
-      "rows": 0,
-      "message": "{\"odds\": 0}"
-    },
-    {
-      "at": "2026-11-07T04:02:56+09:00",
       "kind": "race",
       "status": "OK",
       "rows": 387,
